@@ -14,6 +14,8 @@ export function NavbarClient({ session }: NavbarClientProps) {
         { name: "Experience", href: "#experience" },
         { name: "Skills", href: "#skills" },
         { name: "Projects", href: "#projects" },
+        { name: "Publications", href: "#publications" },
+        { name: "Conferences", href: "#conferences" },
         { name: "Contact", href: "#contact" },
     ]
 
