@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PersonalSite 2026
+
+Built with the latest stack:
+- **Next.js 15** (App Router)
+- **React 19**
+- **Tailwind CSS 4**
+- **Prisma 7** (with `prisma.config.ts`)
+- **PostgreSQL**
+- **Auth.js v5** (NextAuth) via `next-auth@beta`
+- **Resend** for emails
 
 ## Getting Started
 
-First, run the development server:
+1. **Environment Variables**:
+   Create a `.env` file in the root directory with the following keys:
+   ```env
+   DATABASE_URL="postgresql://user:password@host:port/dbname"
+   AUTH_SECRET="your_generated_secret" # run `npx auth secret` to generate
+   AUTH_RESEND_KEY="re_..."
+   EMAIL_FROM="onboarding@resend.dev"
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. **Database Setup**:
+   Since this project uses Prisma 7, configuration is in `prisma.config.ts`.
+   Run the migration to push the schema to your DB:
+   ```bash
+   npx prisma db push
+   # or
+   npx prisma migrate dev
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. **Run Development Server**:
+   ```bash
+   npm run dev
+   ```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Features implemented
+- Responsive Landing Page with Framer Motion animations.
+- Glassmorphism Navbar with Auth state integration.
+- Auth.js with Prisma Adapter (User, Account, Session models).
+- Glassmorphism and modern gradient aesthetics.
