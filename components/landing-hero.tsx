@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { ChevronDown } from "lucide-react"
 
 export function LandingHero() {
     return (
@@ -17,9 +18,6 @@ export function LandingHero() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <span className="inline-block px-3 py-1 mb-6 text-xs font-semibold tracking-widest text-teal-400 uppercase bg-teal-950/50 rounded-full border border-teal-900/50">
-                        Available for Collaboration
-                    </span>
                     <h1 className="text-5xl md:text-7xl font-bold tracking-tight pb-2 text-slate-100">
                         Derick Hoskinson, PhD
                     </h1>
@@ -42,6 +40,22 @@ export function LandingHero() {
                     </a>
                 </motion.div>
             </div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 3, delay: 1 }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+            >
+                <a
+                    href="#about"
+                    className="flex flex-col items-center gap-2 group p-4 cursor-pointer transition-colors"
+                >
+                    <span className="text-sm uppercase tracking-widest text-slate-600 font-bold group-hover:text-teal-400 transition-colors">C.V.</span>
+                    <ChevronDown className="w-5 h-5 text-teal-500/50 group-hover:text-teal-400 transition-colors" />
+                </a>
+            </motion.div>
         </section>
     )
 }

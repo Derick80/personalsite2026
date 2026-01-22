@@ -20,14 +20,7 @@ const projects = [
     }
 ]
 
-// ,
-//     {
-//         title: "Arkham Horror The Card Game Round Tracker",
-//         type: "Personal & Hobby",
-//         description: "Created a responsive application that tracks the progress of players round by round",
-//         icon: FlaskConical,
-//         tech: ["Typescript", "Web Devvelopment", "coding"]
-//     }
+
 export function Projects() {
     return (
         <section id="projects" className="py-24 bg-slate-900/30">

@@ -75,3 +75,13 @@ model Authenticator {
 
   @@id([userId, credentialID])
 }
+
+// Arkham LCG Chat Models
+
+model ArkhamChat {
+  id        String   @id @default(cuid())
+  question  String
+  answer    String
+  model     String
+  createdAt DateTime @default(now())
+}

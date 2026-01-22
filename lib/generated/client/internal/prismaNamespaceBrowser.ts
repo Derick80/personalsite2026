@@ -55,7 +55,8 @@ export const ModelName = {
   Account: 'Account',
   Session: 'Session',
   VerificationToken: 'VerificationToken',
-  Authenticator: 'Authenticator'
+  Authenticator: 'Authenticator',
+  ArkhamChat: 'ArkhamChat'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -138,6 +139,17 @@ export const AuthenticatorScalarFieldEnum = {
 } as const
 
 export type AuthenticatorScalarFieldEnum = (typeof AuthenticatorScalarFieldEnum)[keyof typeof AuthenticatorScalarFieldEnum]
+
+
+export const ArkhamChatScalarFieldEnum = {
+  id: 'id',
+  question: 'question',
+  answer: 'answer',
+  model: 'model',
+  createdAt: 'createdAt'
+} as const
+
+export type ArkhamChatScalarFieldEnum = (typeof ArkhamChatScalarFieldEnum)[keyof typeof ArkhamChatScalarFieldEnum]
 
 
 export const SortOrder = {

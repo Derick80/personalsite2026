@@ -388,7 +388,8 @@ export const ModelName = {
   Account: 'Account',
   Session: 'Session',
   VerificationToken: 'VerificationToken',
-  Authenticator: 'Authenticator'
+  Authenticator: 'Authenticator',
+  ArkhamChat: 'ArkhamChat'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -404,7 +405,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator"
+    modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator" | "arkhamChat"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -778,6 +779,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    ArkhamChat: {
+      payload: Prisma.$ArkhamChatPayload<ExtArgs>
+      fields: Prisma.ArkhamChatFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ArkhamChatFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ArkhamChatFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>
+        }
+        findFirst: {
+          args: Prisma.ArkhamChatFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ArkhamChatFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>
+        }
+        findMany: {
+          args: Prisma.ArkhamChatFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>[]
+        }
+        create: {
+          args: Prisma.ArkhamChatCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>
+        }
+        createMany: {
+          args: Prisma.ArkhamChatCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ArkhamChatCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>[]
+        }
+        delete: {
+          args: Prisma.ArkhamChatDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>
+        }
+        update: {
+          args: Prisma.ArkhamChatUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>
+        }
+        deleteMany: {
+          args: Prisma.ArkhamChatDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ArkhamChatUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ArkhamChatUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>[]
+        }
+        upsert: {
+          args: Prisma.ArkhamChatUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ArkhamChatPayload>
+        }
+        aggregate: {
+          args: Prisma.ArkhamChatAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateArkhamChat>
+        }
+        groupBy: {
+          args: Prisma.ArkhamChatGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ArkhamChatGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ArkhamChatCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ArkhamChatCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -881,6 +956,17 @@ export const AuthenticatorScalarFieldEnum = {
 } as const
 
 export type AuthenticatorScalarFieldEnum = (typeof AuthenticatorScalarFieldEnum)[keyof typeof AuthenticatorScalarFieldEnum]
+
+
+export const ArkhamChatScalarFieldEnum = {
+  id: 'id',
+  question: 'question',
+  answer: 'answer',
+  model: 'model',
+  createdAt: 'createdAt'
+} as const
+
+export type ArkhamChatScalarFieldEnum = (typeof ArkhamChatScalarFieldEnum)[keyof typeof ArkhamChatScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1075,6 +1161,7 @@ export type GlobalOmitConfig = {
   session?: Prisma.SessionOmit
   verificationToken?: Prisma.VerificationTokenOmit
   authenticator?: Prisma.AuthenticatorOmit
+  arkhamChat?: Prisma.ArkhamChatOmit
 }
 
 /* Types for Logging */
