@@ -20,7 +20,7 @@ const ContactForm = () => {
 
   useEffect(() => {
     // Simple JS check: bot likely won't execute this or won't find the field if not rendering fully
-    const nonceElement = document.getElementById("nonce-contact") as HTMLInputElement;
+    const nonceElement = document.getElementById("nonce_contact") as HTMLInputElement;
     if (nonceElement) {
       nonceElement.value = "human";
     }
