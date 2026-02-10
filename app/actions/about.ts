@@ -2,6 +2,8 @@
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
+
+// TODO document this function
 const schema = z.object({
   from: z.string().email("Invalid email address"),
   name: z
