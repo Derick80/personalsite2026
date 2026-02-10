@@ -11,7 +11,7 @@ const ArkhamChatbox = () => {
     const [state, action, isPending] = useActionState(askGPT, null)
 
     return (
-        <section className="py-12 relative">
+        <section id="arkham-chat" className="py-12 relative">
             <div className="container mx-auto px-4 max-w-2xl text-center">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

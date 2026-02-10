@@ -32,7 +32,7 @@ export function Projects() {
                     className="mb-12 text-center"
                 >
                     <h2 className="text-3xl md:text-4xl font-bold text-slate-100 mb-2">
-                        Key Projects
+                        Work Projects
                     </h2>
                     <p className="text-slate-400">Highlighting impact in clinical work</p>
                 </motion.div>

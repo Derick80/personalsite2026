@@ -2,8 +2,7 @@
 
 import Link from "next/link"
 import { useState } from "react"
-import { motion } from "framer-motion"
-import { Menu, User, LogOut, FileText, LayoutDashboard } from "lucide-react"
+import { Menu, LogOut, FileText, LayoutDashboard } from "lucide-react"
 import { handleSignIn, handleSignOut } from "@/app/actions/auth-actions"
 
 import { Button } from "@/components/ui/button"
@@ -24,27 +23,30 @@ import {
 } from "@/components/ui/sheet"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Separator } from "@/components/ui/separator"
+import { Session } from "next-auth"
 
 interface NavbarClientProps {
-    session: any
+    session: Session | null
 }
 
 export function NavbarClient({ session }: NavbarClientProps) {
     const [isOpen, setIsOpen] = useState(false)
 
     const links = [
-        { name: "About", href: "#about" },
-        { name: "Experience", href: "#experience" },
-        { name: "Skills", href: "#skills" },
-        { name: "Projects", href: "#projects" },
-        { name: "Publications", href: "#publications" },
-        { name: "Conferences", href: "#conferences" },
-        { name: "Contact", href: "#contact" },
+        { name: "About", href: "/#about" },
+        { name: "Experience", href: "/#experience" },
+        { name: "Skills", href: "/#skills" },
+        { name: "Work Projects", href: "/#projects" },
+        { name: "Publications", href: "/#publications" },
+        { name: "Conferences", href: "/#conferences" },
+        { name: "Home Projects", href: "/home-projects" },
+        { name: "Contact", href: "/#contact" },
+
     ]
 
     const UserAvatar = () => (
         <Avatar className="h-9 w-9 border border-slate-700 cursor-pointer hover:ring-2 hover:ring-teal-500/50 transition-all">
-            <AvatarImage src={session?.user?.image} alt={session?.user?.email || "User"} />
+            <AvatarImage src={session?.user?.image || ""} alt={session?.user?.email || "User"} />
             <AvatarFallback className="bg-slate-800 text-slate-300">
                 {session?.user?.name?.[0]?.toUpperCase() || session?.user?.email?.[0]?.toUpperCase() || "U"}
             </AvatarFallback>
