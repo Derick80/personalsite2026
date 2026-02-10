@@ -1,6 +1,6 @@
 "use client";
 import { sendContactEmail } from "@/app/actions/about";
-import { useActionState } from "react";
+import { useActionState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
@@ -17,10 +17,28 @@ const ContactForm = () => {
     sendContactEmail,
     initialState,
   );
+
+  useEffect(() => {
+    // Simple JS check: bot likely won't execute this or won't find the field if not rendering fully
+    const nonceElement = document.getElementById("nonce") as HTMLInputElement;
+    if (nonceElement) {
+      nonceElement.value = "human";
+    }
+  }, []);
+
   return (
     <form id="Contact" className="space-y-4  max-w-2xl mx-auto mt-6" action={action}>
       <p className="text-primary italic">Contact me via Email</p>
-      <input type="hidden" name="shield" value="" />
+      {/* Honeypot field - should be left empty by humans */}
+      <input
+        type="text"
+        name="confirm_email"
+        className="hidden"
+        tabIndex={-1}
+        autoComplete="off"
+      />
+      {/* Nonce field - populated by JS to prove client-side execution */}
+      <input type="hidden" name="nonce" id="nonce" />
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>

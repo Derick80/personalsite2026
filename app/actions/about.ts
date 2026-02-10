@@ -14,7 +14,8 @@ const schema = z.object({
     .string()
     .min(10, "Message must be at least 10 characters long")
     .max(500, "Message must be at most 500 characters long"),
-  shield: z.string().max(0),
+  confirm_email: z.string().max(0),
+  nonce: z.string().min(1),
 });
 const apiKey = process.env.AUTH_RESEND_KEY;
 if (!apiKey) {
@@ -33,15 +34,18 @@ export async function sendContactEmail(
     name: formData.get("name"),
     message: formData.get("message"),
 
-    shield: formData.get("shield"),
+    confirm_email: formData.get("confirm_email"),
+    nonce: formData.get("nonce"),
   });
   if (!validatedFields.success) {
     return {
       message: validatedFields.error?.flatten().fieldErrors,
     };
   }
-  const { from, name, message, shield } = validatedFields.data;
-  if (shield !== "") {
+  const { from, name, message, confirm_email, nonce } = validatedFields.data;
+
+  // Spam check
+  if (confirm_email !== "" || nonce !== "human") {
     return {
       message: "Invalid form submission",
     };
