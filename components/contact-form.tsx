@@ -20,7 +20,7 @@ const ContactForm = () => {
 
   useEffect(() => {
     // Simple JS check: bot likely won't execute this or won't find the field if not rendering fully
-    const nonceElement = document.getElementById("nonce") as HTMLInputElement;
+    const nonceElement = document.getElementById("nonce-contact") as HTMLInputElement;
     if (nonceElement) {
       nonceElement.value = "human";
     }
@@ -38,7 +38,7 @@ const ContactForm = () => {
         autoComplete="off"
       />
       {/* Nonce field - populated by JS to prove client-side execution */}
-      <input type="hidden" name="nonce" id="nonce" />
+      <input type="hidden" name="nonce_contact" id="nonce_contact" />
       <div className="grid gap-4 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name">Name</Label>

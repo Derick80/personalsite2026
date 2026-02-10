@@ -1,14 +1,23 @@
 'use client'
 
-import { useActionState } from "react"
 import { askGPT } from "@/app/actions/arkham-lcg-chat"
 import { Input } from "./ui/input"
 import { Button } from "./ui/button"
 import { Search, Loader2, Sparkles, AlertCircle } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
+import React from "react"
 
 const ArkhamChatbox = () => {
-    const [state, action, isPending] = useActionState(askGPT, null)
+    const [state, action, isPending] = React.useActionState(askGPT, null)
+
+    React.useEffect(() => {
+        // Simple JS check: bot likely won't execute this or won't find the field if not rendering fully
+        const nonceElement = document.getElementById("nonce-chat") as HTMLInputElement;
+        if (nonceElement) {
+            nonceElement.value = "human";
+        }
+    }, []);
+
 
     return (
         <section id="arkham-chat" className="py-12 relative">
@@ -29,6 +38,16 @@ const ArkhamChatbox = () => {
 
                     <form action={action} className="relative">
                         <div className="relative flex items-center">
+                            {/* Honeypot field - should be left empty by humans */}
+                            <input
+                                type="text"
+                                name="confirm_email"
+                                className="hidden"
+                                tabIndex={-1}
+                                autoComplete="off"
+                            />
+                            {/* Nonce field - populated by JS to prove client-side execution */}
+                            <input type="hidden" name="nonce" id="nonce-chat" />
                             <Search className="absolute left-4 w-5 h-5 text-slate-500" />
                             <Input
                                 type="text"
@@ -37,6 +56,7 @@ const ArkhamChatbox = () => {
                                 className="pl-12 pr-32 h-14 bg-slate-950 border-slate-800 focus:border-teal-500/50 focus:ring-teal-500/20 rounded-xl text-slate-200 placeholder:text-slate-600 transition-all"
                                 required
                             />
+
                             <div className="absolute right-2 top-2 bottom-2">
                                 <Button
                                     type="submit"

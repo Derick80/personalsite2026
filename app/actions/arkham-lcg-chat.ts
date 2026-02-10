@@ -6,9 +6,9 @@ import { zodTextFormat } from "openai/helpers/zod";
 import z from "zod"
 
 const MessageSchema = z.object({
-    message: z.string(
-
-    ).min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+    message: z.string().min(1, "Message is required").max(1000, "Message must be less than 1000 characters"),
+    confirm_email: z.string().max(0),
+    nonce: z.string().min(1),
 
 })
 
@@ -21,7 +21,9 @@ const ResponseSchema = z.object({
 
 export async function askGPT(previousState: any, formData: FormData) {
     const validatedData = MessageSchema.safeParse({
-        message: formData.get("message")
+        message: formData.get("message"),
+        confirm_email: formData.get("confirm_email"),
+        nonce: formData.get("nonce"),
     })
 
     if (!validatedData.success) {
@@ -30,7 +32,15 @@ export async function askGPT(previousState: any, formData: FormData) {
             error: validatedData.error.issues[0].message
         }
     }
-    const { message } = validatedData.data
+
+    const { message, confirm_email, nonce } = validatedData.data
+
+    // Spam check
+    if (confirm_email !== "" || nonce !== "human") {
+        return {
+            message: "Invalid form submission",
+        };
+    }
     const openai = new OpenAI({
         apiKey: process.env.OPENAI_API_KEY
     })
