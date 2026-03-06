@@ -1,7 +1,15 @@
 import ImageShelf from "../actions/image-shelf"
 import ImageUploader from "../actions/image-uploader"
 import { getUsers } from "../actions/user"
+import type { Metadata } from "next"
 
+export const metadata: Metadata = {
+    title: "Account",
+    robots: {
+        index: false,
+        follow: false,
+    },
+}
 
 export default async function AccountPage() {
     const users = await getUsers()

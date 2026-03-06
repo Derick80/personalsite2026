@@ -5,6 +5,12 @@ import { getChatHistory } from "../actions/arkham-lcg-chat"
 import ArkhamChatbox from "@/components/arkham-chatbox"
 import ArkhamChatHistory from "@/components/arkham-chat-history"
 import { auth } from "@/auth"
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+    title: "Personal Projects",
+    description: "Explore the personal projects, side-hustles, and open-source contributions by Derick Hoskinson.",
+}
 
 export default async function HomeProjectsPage() {
     const chatHistory = await getChatHistory()
@@ -12,7 +18,6 @@ export default async function HomeProjectsPage() {
     const isLoggedIn = session?.user?.id ? true : false
     return (
         <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-teal-500/30 selection:text-teal-50">
-            <Navbar />
             <div className="pt-20">
                 <HomeProjects />
             </div>

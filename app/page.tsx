@@ -9,6 +9,12 @@ import { Publications } from "@/components/publications"
 import { Conferences } from "@/components/conferences"
 import { Contact } from "@/components/contact"
 import { auth } from "@/auth"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Home",
+  description: "Welcome to the personal portfolio of Derick Hoskinson, featuring my software engineering experience, skills, and projects.",
+}
 
 export default async function Home() {
   const session = await auth()
