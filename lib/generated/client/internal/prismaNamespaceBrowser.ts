@@ -52,6 +52,7 @@ export const AnyNull = runtime.AnyNull
 
 export const ModelName = {
   User: 'User',
+  UserImage: 'UserImage',
   Account: 'Account',
   Session: 'Session',
   VerificationToken: 'VerificationToken',
@@ -86,6 +87,21 @@ export const UserScalarFieldEnum = {
 } as const
 
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
+
+
+export const UserImageScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  imageUrl: 'imageUrl',
+  cloudinaryId: 'cloudinaryId',
+  width: 'width',
+  height: 'height',
+  userAvatar: 'userAvatar',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserImageScalarFieldEnum = (typeof UserImageScalarFieldEnum)[keyof typeof UserImageScalarFieldEnum]
 
 
 export const AccountScalarFieldEnum = {

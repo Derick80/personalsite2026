@@ -385,6 +385,7 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   User: 'User',
+  UserImage: 'UserImage',
   Account: 'Account',
   Session: 'Session',
   VerificationToken: 'VerificationToken',
@@ -405,7 +406,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "user" | "account" | "session" | "verificationToken" | "authenticator" | "arkhamChat"
+    modelProps: "user" | "userImage" | "account" | "session" | "verificationToken" | "authenticator" | "arkhamChat"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -480,6 +481,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.UserCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.UserCountAggregateOutputType> | number
+        }
+      }
+    }
+    UserImage: {
+      payload: Prisma.$UserImagePayload<ExtArgs>
+      fields: Prisma.UserImageFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.UserImageFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.UserImageFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>
+        }
+        findFirst: {
+          args: Prisma.UserImageFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.UserImageFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>
+        }
+        findMany: {
+          args: Prisma.UserImageFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>[]
+        }
+        create: {
+          args: Prisma.UserImageCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>
+        }
+        createMany: {
+          args: Prisma.UserImageCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.UserImageCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>[]
+        }
+        delete: {
+          args: Prisma.UserImageDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>
+        }
+        update: {
+          args: Prisma.UserImageUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>
+        }
+        deleteMany: {
+          args: Prisma.UserImageDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.UserImageUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.UserImageUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>[]
+        }
+        upsert: {
+          args: Prisma.UserImageUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$UserImagePayload>
+        }
+        aggregate: {
+          args: Prisma.UserImageAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUserImage>
+        }
+        groupBy: {
+          args: Prisma.UserImageGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserImageGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.UserImageCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.UserImageCountAggregateOutputType> | number
         }
       }
     }
@@ -905,6 +980,21 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const UserImageScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  imageUrl: 'imageUrl',
+  cloudinaryId: 'cloudinaryId',
+  width: 'width',
+  height: 'height',
+  userAvatar: 'userAvatar',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type UserImageScalarFieldEnum = (typeof UserImageScalarFieldEnum)[keyof typeof UserImageScalarFieldEnum]
+
+
 export const AccountScalarFieldEnum = {
   userId: 'userId',
   type: 'type',
@@ -1157,6 +1247,7 @@ export type PrismaClientOptions = ({
 }
 export type GlobalOmitConfig = {
   user?: Prisma.UserOmit
+  userImage?: Prisma.UserImageOmit
   account?: Prisma.AccountOmit
   session?: Prisma.SessionOmit
   verificationToken?: Prisma.VerificationTokenOmit
