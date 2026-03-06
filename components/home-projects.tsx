@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { Bot } from "lucide-react"
+import { Bot, Gamepad2 } from "lucide-react"
 import Link from "next/link"
 
 const homeProjects = [
@@ -11,7 +11,16 @@ const homeProjects = [
         icon: Bot,
         tech: ["Typescript", "Next.js", "AI", "Tailwind CSS", "PostgreSQL", "Vercel"],
         link: "/home-projects#arkham-chat" // Assuming we can link back to the chat on home or maybe we should move it? For now, linking to the section.
+    },
+    {
+        title: "Arkham Horror LCG Round Tracker",
+        type: "Interactive Tool",
+        description: "A digital round tracker and game state manager for Arkham Horror: The Living Card Game. Track rounds, phases, doom, investigator actions, health, and sanity in real time. Features a searchable keyword glossary, per-investigator action pips, and phase-by-phase checklists for Mythos, Investigation, Enemy, and Upkeep. Supports up to 4 investigators with persistent game state saved to local storage.",
+        icon: Gamepad2, // or Dice, or Swords — pick from lucide-react
+        tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Shadcn UI", "Vercel"],
+        link: "https://ahlcg-round-tracker.vercel.app/"
     }
+
 ]
 
 export function HomeProjects() {
@@ -69,7 +78,9 @@ export function HomeProjects() {
 
                                 {/* Optional CTA if we want to link somewhere */}
                                 {project.link && (
-                                    <Link href={project.link} className="inline-flex items-center text-teal-400 text-sm font-medium hover:text-teal-300 transition-colors">
+                                    <Link href={project.link}
+                                        {...(project.link.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                        className="inline-flex items-center text-teal-400 text-sm font-medium hover:text-teal-300 transition-colors">
                                         Try it out <span className="ml-1">→</span>
                                     </Link>
                                 )}
