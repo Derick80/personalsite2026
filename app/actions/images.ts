@@ -123,6 +123,16 @@ export async function favoriteImage(id: string) {
             userAvatar: true,
         },
     })
+
+    // then update the user image to use the new favorite image
+    await prisma.user.update({
+        where: {
+            id: image.userId,
+        },
+        data: {
+            image: image.imageUrl,
+        },
+    })
     revalidatePath("/account")
     return image
 }

@@ -9,7 +9,7 @@ export default async function AccountPage() {
     const images = users?.map((user) => user.userImages).flat() || []
     return (
         <div
-            className="p-2"
+            className="p-2 mt-20"
         >
             <h1>Account</h1>
             <ImageShelf

@@ -87,7 +87,9 @@ export function NavbarClient({ session }: NavbarClientProps) {
                                 <DropdownMenuContent align="end" className="w-56 bg-slate-950 border-slate-800 text-slate-200">
                                     <DropdownMenuLabel className="font-normal">
                                         <div className="flex flex-col space-y-1">
-                                            <p className="text-sm font-medium leading-none text-slate-100">My Account</p>
+                                            <Link href="/account">
+                                                <p className="text-sm font-medium leading-none text-slate-100">My Account</p>
+                                            </Link>
                                             <p className="text-xs leading-none text-slate-500 truncate">{session.user?.email}</p>
                                         </div>
                                     </DropdownMenuLabel>

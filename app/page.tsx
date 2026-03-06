@@ -16,7 +16,6 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen bg-slate-950 text-slate-200 selection:bg-teal-500/30 selection:text-teal-50">
-      <Navbar />
       <LandingHero />
       <About />
       <Experience />
