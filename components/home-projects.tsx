@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { Bot, Gamepad2 } from "lucide-react"
+import { Bot, Gamepad2, Github } from "lucide-react"
 import Link from "next/link"
 
 const homeProjects = [
@@ -17,8 +17,10 @@ const homeProjects = [
         type: "Interactive Tool",
         description: "A digital round tracker and game state manager for Arkham Horror: The Living Card Game. Track rounds, phases, doom, investigator actions, health, and sanity in real time. Features a searchable keyword glossary, per-investigator action pips, and phase-by-phase checklists for Mythos, Investigation, Enemy, and Upkeep. Supports up to 4 investigators with persistent game state saved to local storage.",
         icon: Gamepad2, // or Dice, or Swords — pick from lucide-react
-        tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Shadcn UI", "Vercel"],
-        link: "https://ahlcg-round-tracker.vercel.app/"
+        tech: ["TypeScript", "Next.js", "React", "Tailwind CSS", "Shadcn UI", "Vercel", "Google Antigravity"],
+        link: "https://ahlcg-round-tracker.vercel.app/",
+        gitHubLink: "https://github.com/Derick80/ahlcg-round-tracker",
+
     }
 
 ]
@@ -77,13 +79,23 @@ export function HomeProjects() {
                                 </div>
 
                                 {/* Optional CTA if we want to link somewhere */}
-                                {project.link && (
-                                    <Link href={project.link}
-                                        {...(project.link.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                                        className="inline-flex items-center text-teal-400 text-sm font-medium hover:text-teal-300 transition-colors">
-                                        Try it out <span className="ml-1">→</span>
-                                    </Link>
-                                )}
+                                <div className="flex flex-col gap-2">
+                                    {project.link && (
+                                        <Link href={project.link}
+                                            {...(project.link.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                                            className="inline-flex items-center text-teal-400 text-sm font-medium hover:text-teal-300 transition-colors">
+                                            Try it out <span className="ml-1">→</span>
+                                        </Link>
+                                    )}
+                                    {project.gitHubLink && (
+                                        <Link href={project.gitHubLink}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-1.5 text-slate-400 text-sm font-medium hover:text-slate-200 transition-colors">
+                                            <Github className="w-4 h-4" /> GitHub
+                                        </Link>
+                                    )}
+                                </div>
                             </div>
                         </motion.div>
                     ))}
