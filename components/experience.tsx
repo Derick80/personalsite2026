@@ -84,10 +84,12 @@ export const experiences = [
         endDate: "2017-06-01",
         duties: [
             {
+
                 title:
                     "Trained over 25 M.Ds, M.D./Ph.D.s, rotating fellows, undergraduates, and post-baccalaureates in constitutional variant classification.",
 
             },
+            { title: "Leverage BigQuery SQL to interrogate large-scale clinical and genomic databases, identifying disease-specific patient populations and molecular patterns relevant to assay development." },
             {
                 title:
                     "Assessed pathogenicity of variants from large gene panels covering cardiomyopathy, hearing loss, pulmonary disease, and Noonan syndrome.",
