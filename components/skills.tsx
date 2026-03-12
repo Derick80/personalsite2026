@@ -80,7 +80,7 @@ export const skillCategories = [
         subtitle: "Clinical Genomics and Oncology"
     },
     {
-        title: "Primarly literature review and critical analysis",
+        title: "Literature review and critical analysis",
         category: "Core Expertise",
         subtitle: "Evidence evaluation and curation"
     },
