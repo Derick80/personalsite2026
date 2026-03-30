@@ -57,7 +57,8 @@ export const ModelName = {
   Session: 'Session',
   VerificationToken: 'VerificationToken',
   Authenticator: 'Authenticator',
-  ArkhamChat: 'ArkhamChat'
+  ArkhamChat: 'ArkhamChat',
+  Post: 'Post'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -166,6 +167,25 @@ export const ArkhamChatScalarFieldEnum = {
 } as const
 
 export type ArkhamChatScalarFieldEnum = (typeof ArkhamChatScalarFieldEnum)[keyof typeof ArkhamChatScalarFieldEnum]
+
+
+export const PostScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  content: 'content',
+  published: 'published',
+  publishedAt: 'publishedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  coverImageUrl: 'coverImageUrl',
+  coverImageAlt: 'coverImageAlt',
+  seoTitle: 'seoTitle',
+  seoDescription: 'seoDescription',
+  featured: 'featured'
+} as const
+
+export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]
 
 
 export const SortOrder = {

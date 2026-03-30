@@ -52,3 +52,8 @@ export type Authenticator = Prisma.AuthenticatorModel
  * 
  */
 export type ArkhamChat = Prisma.ArkhamChatModel
+/**
+ * Model Post
+ * 
+ */
+export type Post = Prisma.PostModel

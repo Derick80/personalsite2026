@@ -10,45 +10,15 @@ export const experiences = [
         location: "Chicago, IL 60640",
         startDate: "2019-03-01",
         endDate: "Present",
-        duties: [{
-            title: "Defined clinical reporting requirements for SNV/indels, copy number variants, and structural variants for Tempus xH assay."
-        },
-        {
-            title:
-                "Created a tailored bed file to optimize genomic data analysis and facilitate the identification, classification, and clinical reporting of genetic variants on a large gene panel, resulting in improved accuracy and efficiency of downstream analysis.",
-        },
-        {
-            title:
-                "Contributed to the development and submission of the xT CDx assay to the FDA by curating and analyzing gene data to rank evidence per gene, ensuring accurate and effective clinical use.",
-        },
-        {
-            title:
-                "Played a vital role in the development and application of a new hereditary genetic testing panel, Tempus, xGv3 to identify germline variants in genes associated with hereditary cancer syndromes and incidental findings.",
-        },
-        {
-            title:
-                "Identified gaps and deficiencies in current workflows and executed new workflows and SOPs to harmonize variant classification across multiple institutions.",
-        },
-        {
-            title:
-                "Spearheaded the development and implementation of a reportable bed file solution for the Tempus xF assay, allowing for targeted reporting of specific genomic regions and improving the overall quality of data analysis.",
-        },
-        {
-            title:
-                "Used R programming language to design and implement a regions of interest bed file for reporting insertions and deletions for Tempus xF assay.",
-        },
-        {
-            title:
-                "Used R programming language to create, update, and modify curated data to justify the inclusion or exclusion of genomic regions for xT-oncology FDA application.",
-        },
-        {
-            title:
-                "Acted as the scientific lead in the development of the Tempus xF liquid biopsy panel to sequence and report SNVs and indels in clinically relevant regions of 105 genes plus CNVs and DNA rearrangements in a subset of these genes.",
-        },
-        {
-            title:
-                "Used R programming language to programmatically access data, wrangle data, analyze data and present data to implement changes in workflow or other internal processes.",
-        },
+        duties: [
+
+            { title: "Use R to wrangle, analyze and present data to support internal process improvements and new product development.  " },
+            {
+                title: "Harness the power of AI to develop and implement novel solutions to complex problems."
+            },
+            {
+                title: "Co-author abstracts and poster presentations for scientific conferences."
+            }
         ],
     },
     {
@@ -58,6 +28,42 @@ export const experiences = [
         startDate: "2017-06-01",
         endDate: "2019-03-01",
         duties: [
+            {
+                title:
+                    "Created a tailored bed file to optimize genomic data analysis and facilitate the identification, classification, and clinical reporting of genetic variants on a large gene panel, resulting in improved accuracy and efficiency of downstream analysis.",
+            },
+            {
+                title:
+                    "Contributed to the development and submission of the xT CDx assay to the FDA by curating and analyzing gene data to rank evidence per gene, ensuring accurate and effective clinical use.",
+            },
+            {
+                title:
+                    "Played a vital role in the development and application of a new hereditary genetic testing panel, Tempus, xGv3 to identify germline variants in genes associated with hereditary cancer syndromes and incidental findings.",
+            },
+            {
+                title:
+                    "Identified gaps and deficiencies in current workflows and executed new workflows and SOPs to harmonize variant classification across multiple institutions.",
+            },
+            {
+                title:
+                    "Spearheaded the development and implementation of a reportable bed file solution for the Tempus xF assay, allowing for targeted reporting of specific genomic regions and improving the overall quality of data analysis.",
+            },
+            {
+                title:
+                    "Used R programming language to design and implement a regions of interest bed file for reporting insertions and deletions for Tempus xF assay.",
+            },
+            {
+                title:
+                    "Used R programming language to create, update, and modify curated data to justify the inclusion or exclusion of genomic regions for xT-oncology FDA application.",
+            },
+            {
+                title:
+                    "Acted as the scientific lead in the development of the Tempus xF liquid biopsy panel to sequence and report SNVs and indels in clinically relevant regions of 105 genes plus CNVs and DNA rearrangements in a subset of these genes.",
+            },
+            {
+                title:
+                    "Used R programming language to programmatically access data, wrangle data, analyze data and present data to implement changes in workflow or other internal processes.",
+            },
             {
                 title:
                     "Evaluated data and analyzed variants for a project that led to the publication of the results in Nature BioTechnology.",

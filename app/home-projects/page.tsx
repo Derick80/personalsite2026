@@ -9,7 +9,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
     title: "Personal Projects",
-    description: "Explore the personal projects, side-hustles, and open-source contributions by Derick Hoskinson.",
+    description: "Explore the personal projects of Derick Hoskinson.",
 }
 
 export default async function HomeProjectsPage() {

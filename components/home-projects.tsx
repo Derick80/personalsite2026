@@ -6,11 +6,11 @@ import Link from "next/link"
 const homeProjects = [
     {
         title: "Arkham Horror LCG Chat",
-        type: "Interactive Tool",
-        description: "An AI-powered chat interface for the Arkham Horror Living Card Game. This specialized assistant has access to all the rules including the most recent FAQ. It also has access to all player and encounter cards text. It can answer rules questions and help you with deck building and strategy",
+        type: "Interactive Chatbot",
+        description: "An AI-powered chat interface for the Arkham Horror Living Card Game. This specialized assistant has access to all the rules including the most recent FAQ. It also has access to all player and encounter cards text. It can answer rules questions and help you with deck building and strategy. It is built using OpenAI's GPT 5.2 API",
         icon: Bot,
         tech: ["Typescript", "Next.js", "AI", "Tailwind CSS", "PostgreSQL", "Vercel"],
-        link: "/home-projects#arkham-chat" // Assuming we can link back to the chat on home or maybe we should move it? For now, linking to the section.
+        link: "/home-projects#arkham-chat", // Assuming we can link back to the chat on home or maybe we should move it? For now, linking to the section.,
     },
     {
         title: "Arkham Horror LCG Round Tracker",
